@@ -1,13 +1,6 @@
 /* ================================================
    LUMINA — FOLHA DE ESTILOS GLOBAL
 ================================================ */
-
-
-/* ------------------------------------------------
-   1. VARIÁVEIS — paleta de cores e tokens de design
-   Centraliza todos os valores reutilizáveis.
-   Adicione novas variáveis aqui conforme o projeto crescer.
------------------------------------------------- */
 :root {
     /* Fundos */
     --bg-main:      #0D0D1A;  /* fundo principal — quase preto */
@@ -151,12 +144,10 @@ a.link-texto:hover {
 
 /* ------------------------------------------------
    6. CONTAINER PRINCIPAL
-   Centraliza o conteúdo em todas as páginas.
-   Use <main class="container"> ou <div class="container">.
 ------------------------------------------------ */
 .container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 48px 24px 80px;
     display: flex;
@@ -299,15 +290,35 @@ audio {
 ------------------------------------------------ */
 @media (max-width: 600px) {
     .container {
-        padding: 32px 16px 60px;
+        width: 95%; /* No celular, aproveitamos mais espaço: aumenta de 90% para 95% */
+        padding: 20px 0;
+    }
+
+    #menu ul {
+        flex-direction: column; 
+        width: 100%; /* O menu ocupa 100% da tela no celular */
+        gap: 10px;
+    }
+
+    #menu li, #menu li a {
+        width: 100%; /* Os botões esticam para ocupar 100% da largura no mobile */
+        text-align: center;
+        margin: 0;
+        box-sizing: border-box; /* Garante que o botão não vaze para fora da tela */
+    }
+
+    audio {
+        width: 100%; /* No celular, o player de áudio também passa a usar 100% */
     }
 
     .container-botoes {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Muda a direção de linha para coluna */
+        width: 100%; /* Garante que o container use o espaço todo */
     }
-
-    iframe, video {
-        margin: 20px 0;
+    
+    .container-botoes a {
+        width: 100%; /* Faz cada botão esticar de ponta a ponta na tela do celular */
+        text-align: center;
+        margin: 0 auto; 
     }
 }
