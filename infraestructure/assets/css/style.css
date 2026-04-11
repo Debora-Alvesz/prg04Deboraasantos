@@ -283,7 +283,26 @@ audio {
     50%       { opacity: 0.4; }
 }
 
+/* ------------------------------------------------
+   NOVO: ESTILOS DO MENU PRINCIPAL (Desktop e Tablet)
+------------------------------------------------ */
+#menu {
+    width: 100%;
+}
 
+#menu ul {
+    list-style-type: none; 
+    display: flex;         
+    justify-content: center;
+    gap: 16px;             /* Espaço garantido entre os botões */
+    flex-wrap: wrap;       /* O SEGREDO: Faz o botão pular de linha se a tela apertar! */
+    padding: 0;
+    margin: 20px 0;
+}
+
+#menu li a {
+    margin: 0; 
+}
 /* ------------------------------------------------
    13. RESPONSIVIDADE
    Ajustes para telas menores (celular).
