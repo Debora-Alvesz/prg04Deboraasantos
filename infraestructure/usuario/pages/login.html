@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/prg04Deboraasantos/infraestructure/assets/css/style.css">
+    <link rel="icon" type="image/png" href="/prg04Deboraasantos/infraestructure/assets/images/favicon.png">
+
+    <title>Login — Lumina</title>
+</head>
+<body>
+
+    <header>
+        <h1>Lumina</h1>
+        <nav id="menu">
+            <ul>
+                <li><a href="/prg04Deboraasantos/infraestructure/pages/index.html">Voltar ao Início</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container fade-down">
+
+            <div class="form-card">
+                <h2 style="text-align:center; margin-bottom: 6px;">Bem-vindo de volta</h2>
+                <p style="text-align:center; margin-bottom: 28px;">Acesse o painel administrativo</p>
+
+                <div class="form-group">
+                    <label for="email">E-mail ou Usuário</label>
+                    <input type="text" id="email" placeholder="seu@email.com" autocomplete="username">
+                    <span class="mensagem-erro" id="erro-email">Por favor, informe um e-mail válido.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="••••••••" autocomplete="current-password">
+                    <span class="mensagem-erro" id="erro-senha">A senha é obrigatória.</span>
+                </div>
+
+                <button class="btn-submit" onclick="validarLogin()">Entrar</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        function validarLogin() {
+            const emailInput  = document.getElementById('email');
+            const senhaInput  = document.getElementById('senha');
+            const erroEmail   = document.getElementById('erro-email');
+            const erroSenha   = document.getElementById('erro-senha');
+
+            let valido = true;
+
+            // Limpa estados anteriores
+            emailInput.classList.remove('input-erro');
+            senhaInput.classList.remove('input-erro');
+            erroEmail.classList.remove('visivel');
+            erroSenha.classList.remove('visivel');
+
+            const emailVal = emailInput.value.trim();
+            const senhaVal = senhaInput.value.trim();
+
+            // Validação do e-mail/usuário
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailVal === '' || !regexEmail.test(emailVal)) {
+                emailInput.classList.add('input-erro');
+                erroEmail.classList.add('visivel');
+                valido = false;
+            }
+
+            // Validação da senha
+            if (senhaVal === '') {
+                senhaInput.classList.add('input-erro');
+                erroSenha.classList.add('visivel');
+                valido = false;
+            }
+
+            if (valido) {
+                // Simulação de autenticação bem-sucedida
+                window.location.href = 'admin.html';
+            }
+        }
+
+        // Permite submeter com Enter
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') validarLogin();
+        });
+    </script>
+
+</body>
+</html>
