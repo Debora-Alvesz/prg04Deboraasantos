@@ -1,0 +1,140 @@
+/* ================================================
+   LUMINA — CSS EXCLUSIVO PARA O INDEX COM BOOTSTRAP
+================================================ */
+:root {
+    /* Fundos */
+    --bg-main:      #0D0D1A;
+    --bg-surface:   #13132B;
+    --bg-elevated:  #1E1E3F;
+    --border-color: #2A2A4A;
+
+    /* Cores da marca */
+    --primary:      #7C3AED;
+    --accent-1:     #A855F7;
+    --accent-cyan:  #22D3EE;
+    --accent-green: #4ADE80;
+    --accent-pink:  #F472B6;
+
+    /* Textos */
+    --text-main:      #F0F0FF;
+    --text-secondary: #8080B0;
+
+    /* Efeitos de brilho (glow neon) */
+    --glow-primary: rgba(124, 58, 237, 0.30);
+
+    /* Espaçamentos e Sombras */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-pill: 100px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------------------------------
+   1. BASE E FUNDO
+------------------------------------------------ */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    /* Textura de fundo original do Lumina */
+    background-image:
+        radial-gradient(circle at 15% 15%, rgba(124, 58, 237, 0.07) 0%, transparent 50%),
+        radial-gradient(circle at 85% 85%, rgba(34, 211, 238, 0.04) 0%, transparent 50%),
+        radial-gradient(var(--border-color) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 28px 28px;
+}
+
+h1, h2, h3 {
+    color: var(--primary);
+    text-shadow: 0 0 12px var(--glow-primary);
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+/* ------------------------------------------------
+   2. CUSTOMIZAÇÃO DO BOOTSTRAP
+------------------------------------------------ */
+/* Botões */
+.btn-primary {
+    background-color: var(--primary) !important; /* Força a cor por cima do Bootstrap */
+    color: var(--text-main) !important;
+    border: none !important;
+    border-radius: var(--radius-sm);
+    font-weight: bold;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--accent-1) !important;
+    box-shadow: 0 0 18px var(--accent-1);
+    transform: translateY(-2px);
+}
+
+/* Links em forma de texto */
+.btn-link {
+    color: var(--accent-1) !important;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.btn-link:hover {
+    color: var(--text-main) !important;
+    text-decoration: underline;
+}
+
+/* Cards */
+.card {
+    background-color: var(--bg-surface) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    color: var(--text-main) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.card-body {
+    padding: 24px;
+}
+
+/* ------------------------------------------------
+   3. MÍDIAS E ANIMAÇÕES
+------------------------------------------------ */
+iframe, video {
+    background-color: var(--bg-surface);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    width: 100%;
+}
+
+audio {
+    border-radius: var(--radius-pill);
+    box-shadow: 0 0 18px var(--glow-primary);
+    width: 100%;
+    max-width: 500px;
+}
+
+.fade-down { animation: fadeDown 0.6s ease both; }
+.fade-up { animation: fadeUp 0.6s ease both; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
