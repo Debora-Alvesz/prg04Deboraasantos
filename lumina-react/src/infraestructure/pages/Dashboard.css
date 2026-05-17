@@ -1,0 +1,162 @@
+.dashboard__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.btn-nova {
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: var(--text-main);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-nova:hover {
+  background-color: var(--accent-1);
+  box-shadow: 0 0 18px var(--glow-primary);
+  transform: translateY(-2px);
+}
+
+.form-nova {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.form-nova input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 16px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-nova input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--glow-primary);
+}
+
+.form-nova button {
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: var(--primary);
+  color: var(--text-main);
+  transition: all 0.25s;
+}
+
+.form-nova button:hover {
+  background-color: var(--accent-1);
+}
+
+.btn-cancelar {
+  background-color: transparent !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-secondary) !important;
+}
+
+.dashboard__filtros {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s;
+}
+
+.filtro-btn:hover {
+  border-color: var(--primary);
+  color: var(--text-main);
+}
+
+.filtro-btn--ativo {
+  background-color: rgba(124, 58, 237, 0.15);
+  border-color: var(--primary);
+  color: var(--accent-1);
+}
+
+.tarefa-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarefa-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.tarefa-item:hover {
+  background-color: var(--bg-elevated);
+  transform: translateX(4px);
+}
+
+.tarefa-item--concluida .tarefa-titulo {
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+
+.tarefa-check {
+  background: none;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+}
+
+.tarefa-check--ok {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  background-color: rgba(74, 222, 128, 0.1);
+}
+
+.tarefa-titulo {
+  flex: 1;
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+.tarefa-vazia {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 40px;
+}
