@@ -1,0 +1,28 @@
+/* Herda .login-container, .form-card, .form-group, .btn-submit,
+   .mensagem-erro, .erro-geral, .form-card__rodape e .link-cadastro
+   do LoginForm.css — não precisa redeclarar. */
+
+/* Barra de força da senha */
+.senha-forca {
+  margin-top: 8px;
+  display: flex;
+  gap: 4px;
+}
+
+.senha-forca__bloco {
+  flex: 1;
+  height: 3px;
+  border-radius: 99px;
+  background-color: var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.senha-forca__bloco--fraca   { background-color: var(--accent-pink); }
+.senha-forca__bloco--media   { background-color: #FBBF24; }
+.senha-forca__bloco--forte   { background-color: var(--accent-green); }
+
+.senha-forca__label {
+  font-size: 11px;
+  margin-top: 4px;
+  color: var(--text-dim);
+}
